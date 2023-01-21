@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { empleadoI } from 'src/app/models/empleado.interface';
+import { ResponseI } from 'src/app/models/response.interface';
 import { ApiService } from 'src/app/services/api/api.service';
+import { AlertsService } from 'src/app/services/alerts/alerts.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -14,7 +16,8 @@ export class EditEmpleadoComponent implements OnInit {
 
   constructor(private activerouter: ActivatedRoute, 
               private router:Router,
-              private api:ApiService) { }
+              private api:ApiService,
+              private alerts:AlertsService) { }
 
   datosEmpleado!: empleadoI;
   editForm = new FormGroup({
@@ -40,14 +43,27 @@ export class EditEmpleadoComponent implements OnInit {
 
   postForm(form:empleadoI | any) {
     this.api.putEmpleado(form).subscribe( data =>{
-      console.log(data);
+      let respuesta:ResponseI | any = data;
+      if(respuesta.status == "ok"){
+        this.alerts.showSuccess('Datos Modificados', 'Hecho');  
+      }
+      alert("Usuario Modificado!");
     });
   }
 
   eliminar(){
     let datos:empleadoI | any = this.editForm.value;
     this.api.deleteEmpleado(datos).subscribe(data =>{
-      console.log(data);
-    })
+      let respuesta:ResponseI | any = data;
+      if(respuesta.status == "ok"){
+        this.alerts.showSuccess('Empleado Eliminado', 'Hecho');
+      }
+      alert("Usuario Eliminado!");
+    });
+    this.router.navigate(['dashboard']);
+  }
+
+  salir(){
+    this.router.navigate(['dashboard']);
   }
 }

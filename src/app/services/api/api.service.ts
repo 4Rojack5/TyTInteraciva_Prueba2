@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 
 import { empleadoI } from 'src/app/models/empleado.interface';
 import { ListaempleadosI } from 'src/app/models/empleados.interface';
-import { ResponseI } from 'src/app/models/response.interface';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -40,6 +39,11 @@ export class ApiService {
       body: form
     }
     return this.http.delete(direccion, Options);
+  }
+
+  postEmpleado(form:empleadoI){
+    let direccion = this.url;
+    return this.http.post(direccion, form);
   }
 
 }

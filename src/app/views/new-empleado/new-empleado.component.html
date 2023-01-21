@@ -1,1 +1,16 @@
-<p>new-empleado works!</p>
+<app-header></app-header>
+
+<div class="container">
+    <form [formGroup]="newForm" (ngSubmit)="postForm(newForm.value)">
+        <label for="">Cedula</label>
+        <input type="number" class="form-control" placeholder="Cedula del Empleado" formControlName="cedula" required="Por favor llene">
+        <label for="">Nombres</label>
+        <input type="text" class="form-control" placeholder="Nombres del Empleado" formControlName="nombres_Emp" required>
+        <label for="">Apellidos</label>
+        <input type="text" class="form-control" placeholder="Apellidos del Empleado" formControlName="apellidos_Emp" required>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+        <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
+    </form>
+</div>
+
+<app-footer></app-footer>
