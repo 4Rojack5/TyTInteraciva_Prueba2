@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+    <div class="container">
+        <form [formGroup]="editForm" (ngSubmit)="postForm(editForm.value)">
+            <label for="">Cedula</label>
+            <input type="number" class="form-control" placeholder="Cedula del Empleado" formControlName="cedula">
+            <label for="">Nombres</label>
+            <input type="text" class="form-control" placeholder="Nombres del Empleado" formControlName="nombres_Emp">
+            <label for="">Apellidos</label>
+            <input type="text" class="form-control" placeholder="Apellidos del Empleado" formControlName="apellidos_Emp">
+            <button type="submit" class="btn btn-success">Actualizar</button>
+            <button type="button" class="btn btn-danger" (click)="eliminar()">¡Eliminar Empleado!</button>
+        </form>
+    </div>
+
+<app-footer></app-footer>

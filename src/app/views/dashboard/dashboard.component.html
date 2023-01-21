@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="container text-center mt-5">
+    <div class="row align-items-start">
+    <div class="col">
+        <button type="button" class="btn btn-success" (click)="nuevoEmpleado()">Nuevo Empleado</button>
+    </div>
+    <div class="col">
+        <h2 class="mb-3">Lista de Empleados</h2>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Cedula</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let empleado of empleados" (click)="editarEmpleado(empleado.id)">
+                <th scope="row">{{ empleado.id }}</th>
+                <td>{{ empleado.cedula }}</td>
+                <td>{{ empleado.nombres_Emp }}</td>
+                <td>{{ empleado.apellidos_Emp }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+<app-footer></app-footer>
