@@ -1,15 +1,21 @@
 <app-header></app-header>
 
-<div class="container">
+<div class="container pt-4">
     <form [formGroup]="newForm" (ngSubmit)="postForm(newForm.value)">
-        <label for="">Cedula</label>
+        <label for="cedula">Cedula:</label>
         <input type="number" class="form-control" placeholder="Cedula del Empleado" formControlName="cedula" required="Por favor llene">
-        <label for="">Nombres</label>
+        <label for="nombres">Nombres:</label>
         <input type="text" class="form-control" placeholder="Nombres del Empleado" formControlName="nombres_Emp" required>
-        <label for="">Apellidos</label>
+        <label for="apellidos">Apellidos:</label>
         <input type="text" class="form-control" placeholder="Apellidos del Empleado" formControlName="apellidos_Emp" required>
-        <button type="submit" class="btn btn-primary">Agregar</button>
-        <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
+        <div class="row justify-content-center pt-5">
+            <div class="col-4 d-flex">
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </div>
+            <div class="col-4 d-flex">
+                <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
+            </div>
+        </div>
     </form>
 </div>
 

@@ -1,0 +1,15 @@
+.card{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 0.5em;
+}
+.table{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 0.5em;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    cursor: pointer;
+    background-color: #294374;
+    color: white;
+    }

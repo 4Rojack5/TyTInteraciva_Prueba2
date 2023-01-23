@@ -11,7 +11,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ApiService {
 
-  url:string = "http://localhost:8080/api/empleados";
+  url:string = "http://localhost:8080/api/empleados" || 8080;
 
   constructor(private http:HttpClient) { }
 
