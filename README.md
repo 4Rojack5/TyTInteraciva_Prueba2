@@ -20,7 +20,6 @@ Metodos utilizados GET, POST, DELETE, PUT.
 
 igualmente la instancia está activada y funcionado para que se puede visualizar desde los link:
 
-http://3.90.83.7
 http://ec2-3-90-83-7.compute-1.amazonaws.com
 
 Entrando a Angular agregué un servicio para consumir la api creada en PHP, dos templates un header que contiene un navbar y el logo de la empresa T&T Interactiva y un footer con mi nombre, contiene 3 views un el dashboard que es la pagina principal "home", un edit-empleado la vista que edita los datos y new-empleado que ayuda a crear un nuevo empleado.
