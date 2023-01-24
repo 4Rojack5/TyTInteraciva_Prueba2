@@ -1,5 +1,7 @@
+<!--Etiqueta para traer header-->
 <app-header></app-header>
-<div class="container text-center mt-5">
+<!--Se agrega un card de bootstrap 5-->
+<div class="container text-center mt-5 mb-5">
     <div class="row align-items-start">
     <div class="col d-flex justify-content-center">
         <div class="card" style="width: 24rem;">
@@ -7,10 +9,12 @@
             <div class="card-body">
             <h5 class="card-title">Añade un nuevo Empleado</h5>
             <p class="card-text">Agrega todo su contenido para que se asigne en la plataforma de empleados.</p>
+            <!--Se agrega un button con un metodo click y una funcion nuevoEmpleado creada en el .ts-->
             <button type="button" class="btn btn-success" (click)="nuevoEmpleado()">Nuevo Empleado</button>
             </div>
         </div> 
     </div>
+    <!--Se crea la tabla para mostrar los empleados-->
     <div class="col">
         <h2 class="mb-5 text-light">Lista de Empleados</h2>
         <table class="table table-hover table-borderless">
@@ -23,6 +27,7 @@
             </tr>
             </thead>
             <tbody>
+            <!--Se crea un *ngFor para que por medio de la interpolacion traiga los datos ademas de agregar un metodo click y una funcion editarEmpleado creada en el .ts -->
             <tr *ngFor="let empleado of empleados" (click)="editarEmpleado(empleado.id)">
                 <th scope="row">{{ empleado.id }}</th>
                 <td>{{ empleado.cedula }}</td>

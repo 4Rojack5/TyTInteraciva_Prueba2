@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class NewEmpleadoComponent implements OnInit {
 
+  //newform mantener la array vacia de los datos
   newForm = new FormGroup({
     cedula: new FormControl(''),
     nombres_Emp: new FormControl(''),
@@ -21,6 +22,7 @@ export class NewEmpleadoComponent implements OnInit {
     id: new FormControl('')
   });
 
+  //Se añade al constructor las clases para poder importar y exportar datos
   constructor(private activerouter: ActivatedRoute, 
     private router:Router,
     private api:ApiService,
@@ -29,6 +31,7 @@ export class NewEmpleadoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //funcion para agregar un nuevo usuario y redireccionarlo al home
   postForm(form:empleadoI | any){
     this.api.postEmpleado(form).subscribe(data =>{
       console.log(data);
@@ -37,6 +40,7 @@ export class NewEmpleadoComponent implements OnInit {
     this.router.navigate(['dashboard']);
   }
 
+  //funcion para salir de la vista.
   salir(){
     this.router.navigate(['dashboard']);
   }

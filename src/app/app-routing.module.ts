@@ -4,6 +4,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EditEmpleadoComponent } from './views/edit-empleado/edit-empleado.component';
 import { NewEmpleadoComponent } from './views/new-empleado/new-empleado.component';
 
+//ENRUTADO DE TODAS LAS VISTAS
 const routes: Routes = [
   {
     path: '', 

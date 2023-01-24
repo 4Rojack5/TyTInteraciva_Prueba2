@@ -1,3 +1,4 @@
+//Se importa una interface con los datos que se van a importar de la tabla del Servicio de PHP
 export interface empleadoI{
     id: string;
     cedula: string;

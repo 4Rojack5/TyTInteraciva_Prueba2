@@ -1,6 +1,9 @@
+<!--se agrega etiqueta para traer header-->
 <app-header></app-header>
 
+<!--se agrega container para mantener los inputs-->
 <div class="container pt-4">
+     <!--se añade formGroup para poner los campos vacios desde el servicio y tambien se añade la expresión ngSubmit para poner los datos y enviarlos a la DB-->
     <form [formGroup]="newForm" (ngSubmit)="postForm(newForm.value)">
         <label for="cedula">Cedula:</label>
         <input type="number" class="form-control" placeholder="Cedula del Empleado" formControlName="cedula" required="Por favor llene">
@@ -10,13 +13,16 @@
         <input type="text" class="form-control" placeholder="Apellidos del Empleado" formControlName="apellidos_Emp" required>
         <div class="row justify-content-center pt-5">
             <div class="col-4 d-flex">
+                <!--Boton con submit para agregar empleado-->
                 <button type="submit" class="btn btn-primary">Agregar</button>
             </div>
             <div class="col-4 d-flex">
+                <!--Boton para salir-->
                 <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
             </div>
         </div>
     </form>
 </div>
 
+<!--se agrega etiqueta para traer footer-->
 <app-footer></app-footer>

@@ -1,6 +1,9 @@
+<!--Se agrega la etiqueta header-->
 <app-header></app-header>
 
-    <div class="container pt-4">
+    <!--Se agrega un container con inputs para poder editar el empleado-->
+    <div class="container pt-4" style="height: 515px !important;">
+        <!--se añade formGroup para traer los datos desde el servicio y tambien se añade la expresión ngSubmit para poder editar los values y enviarlos de nuevo a la DB-->
         <form [formGroup]="editForm" (ngSubmit)="postForm(editForm.value)">
             <label for="">Cedula:</label>
             <input type="number" class="form-control" placeholder="Cedula del Empleado" formControlName="cedula">
@@ -11,12 +14,15 @@
             <div class="container text-center">
                 <div class="row align-items-center pt-5">
                 <div class="col">
+                    <!--Boton tipo submit para actualizar los datos-->
                     <button type="submit" class="btn btn-success">Actualizar</button>
                 </div>
                 <div class="col">
+                    <!--Boton con función para eliminar los empleados-->
                     <button type="button" class="btn btn-danger" (click)="eliminar()">¡Eliminar Empleado!</button>
                 </div>
                 <div class="col">
+                    <!--Boton para salir-->
                     <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
                 </div>
                 </div>
@@ -24,4 +30,5 @@
         </form>
     </div>
 
+<!--se agrega etiqueta para traer footer-->
 <app-footer></app-footer>

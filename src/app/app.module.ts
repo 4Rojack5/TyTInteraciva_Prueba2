@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+//SE DECLARAN TODOS LOS COMPONENTES Y MODULOS
 @NgModule({
   declarations: [
     AppComponent,

@@ -14,11 +14,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class EditEmpleadoComponent implements OnInit {
 
+  //Se añade al constructor las clases para poder importar y exportar datos
   constructor(private activerouter: ActivatedRoute, 
               private router:Router,
               private api:ApiService,
               private alerts:AlertsService) { }
 
+  //editform crear una array vacia de los datos para despues inyectarle los datos traidos en el ngOnInit y datosEmpleado trae el interface de empleadoI
   datosEmpleado!: empleadoI;
   editForm = new FormGroup({
     cedula: new FormControl(''),
@@ -27,6 +29,7 @@ export class EditEmpleadoComponent implements OnInit {
     id: new FormControl('')
 });
 
+  //que muestre los datos del empleado seleccionado con router y snapshot
   ngOnInit(): void {
     let id = this.activerouter.snapshot.paramMap.get('id');
     this.api.getEmpleado(id).subscribe((data: any) =>{
@@ -41,6 +44,7 @@ export class EditEmpleadoComponent implements OnInit {
 
   }
 
+  //funcion para actualizar los datos y que salga una alerta de actualizado
   postForm(form:empleadoI | any) {
     this.api.putEmpleado(form).subscribe( data =>{
       let respuesta:ResponseI | any = data;
@@ -51,6 +55,7 @@ export class EditEmpleadoComponent implements OnInit {
     });
   }
 
+   //funcion para eliminar el empleado y redireccione al home
   eliminar(){
     let datos:empleadoI | any = this.editForm.value;
     this.api.deleteEmpleado(datos).subscribe(data =>{
@@ -63,6 +68,7 @@ export class EditEmpleadoComponent implements OnInit {
     this.router.navigate(['dashboard']);
   }
 
+  //funcion para salir de la vista
   salir(){
     this.router.navigate(['dashboard']);
   }
