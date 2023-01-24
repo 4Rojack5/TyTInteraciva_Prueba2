@@ -28,6 +28,8 @@ Cada componente/Vista contiene su respectiva información.
 
 Muchas gracias por la Atención prestada.
 
+Created By: Juan Felipe Rodríguez Rendón
+
 ## Development server
 
 Run `ng serve --o` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
