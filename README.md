@@ -8,7 +8,7 @@ La prueba consiste en un crud con servicios creados en PHP para agregar, actuali
 
 Se sube la app web a una instancia de EC2 correctamente pero no se logra conectar muy bien a la base de datos que tambien subí a la instancia, no logré hallar el problema exacto, me pide que tiene que ser un https y no un http, otro problema que tuve fue CORPS.
 
-Recomiendo si se va a probar la app se pruebe con localhost y XAMP adicionalmente crear una base de datos llamada api_crud y una tabla llamada empleados con 4 campos 
+Recomiendo si se va a probar la app se pruebe con localhost y XAMP poner la carpeta api en htdocs, adicionalmente crear una base de datos llamada api_crud y una tabla llamada empleados con 4 campos 
 
 create table empleados(
 id int(20) not null auto_increment primary key,
